@@ -1,8 +1,26 @@
 //Array containing Pokemon info
 
 const pokemonArr = [
-    {number:"001", name: "Bulbasaur", type: "Grass & Poison", ability:"Overgrow | Chlorophyll", image:"img/001Bulbasaur.png"},
-    {number:"002", name: "Ivysaur", type: "Grass & Poison", ability:"Overgrow | Chlorophyll", image:"img/002Ivysaur.png"},
-
-
+    {number:"001", name: "Bulbasaur", type: "Grass & Poison", image:"img/001Bulbasaur.png", evolution:"Bulbasaur"},
+    {number:"002", name: "Ivysaur", type: "Grass & Poison", image:"img/002Ivysaur.png", evolution:"Bulbasaur"},
+    {number:"003", name:"Venusaur", type:"Grass & Poison", image:"img/003Venusaur.png", evolution:"Bulbasaur"},
+    {number:"004", name:"Charmander", type:"Fire", image:"img/004Charmander.png", evolution:"Charmander"},
+    {number:"005", name:"Charmeleon", type:"Fire", image:"img/005Charmeleon.png",  evolution:"Charmander"},
+    {number:"006", name:"Charizard", type:"Fire & Flying", image:"img/006Charizard.png",  evolution:"Charmander"},
+    {number:"007", name:"Squirtle", type:"Water", image:"img/007Squirtle.png", evolution:"Squirtle"},
+    {number:"008", name:"Wartortle", type:"Water", image:"img/008Wartortle.png", evolution:"Squirtle"},
+    {number:"009", name:"Blastoise", type:"Water", image:"img/008Wartortle.png", evolution:"Squirtle"},
+    {number:"010", name:"Caterpie", type:"Bug", image:"img/010Caterpie.png", evolution:"Caterpie"},
+    {number:"011", name:"Metapod", type:"Bug", image:"img/011Metapod.png", evolution:"Caterpie"},
+    {number:"012", name:"Butterfree", type:"Bug & Flying", img:"img/012Butterfree.png", evolution:"Caterpie"},
+    {number:"013", name:"Weedle", type:"Bug & Poison", img:"img/013Weedle.png", evolution:"Weedle"},
+    {number:"014", name:"Kakuna", type:"Bug & Poison", img:"img/014Kakuna.png", evolution:"Weedle"},
+    {number:"015", name:"Beedrill", type:"Bug & Poison", img:"img/015Beedrill.png", evolution:"Weedle"},
+    {number:"016", name:"Pidgey", type:"Normal & Flying", img:"img/016Pidgey.png", evolution:"Pidgey"},
+    {number:"017", name:"Pideotto", type:"Normal & Flying", img:"img/017Pidgeotto.png", evolution:"Pidgey"},
+    {number:"018", name:"Pidgeot", type:"Normal & Flying", img:"img/018Pidgeot.png", evolution:"Pidgey"},
+    {number:"019", name:"Rattata", type:"Normal", img:"img/019Rattata.png", evolution:"Rattata"},
+    {number:"020", name:"Raticate", type:"Normal", img:"img/020Raticate.png", evolution:"Rattata"},
+    {number:"21", name:"Spearow", type:"Nomral & Flying", img:"img/021Spearow.png", evolution:"Spearow"},
+    {number:"22", name:"Fearow", type:"Normal & Flying", img:"/img/022Fearow.png", evolution:"Spearow"},
 ];
