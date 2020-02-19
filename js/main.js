@@ -1,7 +1,7 @@
 //Array containing Pokemon info
 const pokemonArr = [
     {number:"001", name: "Bulbasaur", type: "Grass & Poison", image:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
-    {number:"002", name: "Ivysaur", type: "Grass & Poison", image:"img/002Ivysaur.png", evolveFrom:"Bulbasaur", evolveTo:"Venusaur"}
+    {number:"002", name: "Ivysaur", type: "Grass & Poison", image:"img/002Ivysaur.png", evolveFrom:"Bulbasaur", evolveTo:"Venusaur"},
     {number:"003", name:"Venusaur", type:"Grass & Poison", image:"img/003Venusaur.png", evolveFrom:"Ivysaur", evolveTo:"None"},
     {number:"004", name:"Charmander", type:"Fire", image:"img/004Charmander.png", evolveFrom:"None", evolveTo:"Charmeleon"},
     {number:"005", name:"Charmeleon", type:"Fire", image:"img/005Charmeleon.png", evolveFrom:"Charmander", evolveTo:"Charizard"},
@@ -18,7 +18,7 @@ const pokemonArr = [
     {number:"016", name:"Pidgey", type:"Normal & Flying", img:"img/016Pidgey.png", evolveFrom:"None", evolveTo:"Pidgeotto"},
     {number:"017", name:"Pidgeotto", type:"Normal & Flying", img:"img/017Pidgeotto.png", evolveFrom:"Pidgey", evolveTo:"Pidgeot"},
     {number:"018", name:"Pidgeot", type:"Normal & Flying", img:"img/018Pidgeot.png", evolveFrom:"Pidgeotto", evolveTo:"None"},
-    {number:"019", name:"Rattata", type:"Normal", img:"img/019Rattata.png", evolveFrom:"None", evolveTo:"Raticate",}
+    {number:"019", name:"Rattata", type:"Normal", img:"img/019Rattata.png", evolveFrom:"None", evolveTo:"Raticate"},
     {number:"020", name:"Raticate", type:"Normal", img:"img/020Raticate.png", evolveFrom:"Rattatta", evolveTo:"None"},
     {number:"021", name:"Spearow", type:"Nomral & Flying", img:"img/021Spearow.png", evolveFrom:"None", evolveTo:"Fearow"},
     {number:"022", name:"Fearow", type:"Normal & Flying", img:"img/022Fearow.png", evolveFrom:"Spearow", evolveTo:"None"},
@@ -112,12 +112,43 @@ const pokemonArr = [
     {number:"110", name:"Weezing", type: "Poison", img:"img/110Weezing.png", evolveFrom:"Koffing", evolveTo:"None"},
     {number:"111", name:"Rhyhorn", type: "Ground & Rock", img:"img/111Rhyhorn.png", evolveFrom:"None", evolveTo:"Rhydon"},
     {number:"112", name:"Rhydon", type: "Ground & Rock", img:"img/112Rhydon.png", evolveFrom:"Rhyhorn", evolveTo:"None"},
-
-
-
-
-
-
-
-    {number:"", name:"", type: "", img:"", evolveFrom:"", evolveTo:""},
+    {number:"113", name:"Chansey", type: "Normal", img:"img/113Chansey.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"114", name:"Tangela", type: "Grass", img:"img/114Tangela.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"115", name:"Kangaskhan", type: "Normal", img:"img/115Kangaskhan.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"116", name:"Horsea", type: "Water", img:"img/116Horsea.png", evolveFrom:"None", evolveTo:"Seadra"},
+    {number:"117", name:"Seadra", type: "Water", img:"img/117Seadra.png", evolveFrom:"Horsea", evolveTo:"None"},
+    {number:"118", name:"Goldeen", type: "Water", img:"img/118Goldeen.png", evolveFrom:"None", evolveTo:"Seaking"},
+    {number:"119", name:"Seaking", type: "Water", img:"img/119Seaking.png", evolveFrom:"Goldeen", evolveTo:"None"},
+    {number:"120", name:"Staryu", type: "Water", img:"img/120Staryu.png", evolveFrom:"None", evolveTo:"Starmie"}, 
+    {number:"121", name:"Starmie", type: "Water/Psychic", img:"img/121Starmie.png", evolveFrom:"Staryu", evolveTo:"None"},
+    {number:"122", name:"Mr. Mime", type: "Psychic & Fairy", img:"img/122Mr._Mime.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"123", name:"Scyther", type: "Bug & Flying", img:"img/123Scyther.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"124", name:"Jynx", type: "Ice & Psychic", img:"img/124Jynx.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"125", name:"Electabuzz", type: "Electric", img:"img/125Electabuzz.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"126", name:"Magmar", type: "Fire", img:"img/126Magmar.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"127", name:"Pinsir", type: "Bug", img:"img/127Pinsir.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"128", name:"Tauros", type: "Normal", img:"img/128Tauros.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"129", name:"Magikarp", type: "Water", img:"img/129Magikarp.png", evolveFrom:"None", evolveTo:"Gyrados"},
+    {number:"130", name:"Gyrados", type: "Water & Flying", img:"img/130Gyarados.png", evolveFrom:"Magikarp", evolveTo:"None"},
+    {number:"131", name:"Lapras", type: "Water & Ice", img:"img/131Lapras.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"132", name:"Ditto", type: "Normal", img:"img/132Ditto.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"133", name:"Evee", type: "Normal", img:"img/133Eevee.png", evolveFrom:"None", evolveTo:"Vaporeon | Jolteon | Flareon"},
+    {number:"134", name:"Vaporeon", type: "Water", img:"img/134Vaporeon.png", evolveFrom:"Evee", evolveTo:"None"},
+    {number:"135", name:"Jolteon", type: "Electric", img:"img/135Jolteon.png", evolveFrom:"Evee", evolveTo:"None"},
+    {number:"136", name:"Flareon", type: "Fire", img:"img/136Flareon.png", evolveFrom:"Evee", evolveTo:"None"},
+    {number:"137", name:"Porygon", type: "Normal", img:"img/137Porygon.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"138", name:"Omanyte", type: "Rock & Water", img:"img/138Omanyte.png", evolveFrom:"None", evolveTo:"Omastar"},
+    {number:"139", name:"Omastar", type: "Rock & Water", img:"img/139Omastar.png", evolveFrom:"Omanyte", evolveTo:"None"},
+    {number:"140", name:"Kabuto", type: "Rock & Water", img:"img/140Kabuto.png", evolveFrom:"None", evolveTo:"Kabutops"},
+    {number:"141", name:"Kabutops", type: "Rock & Water", img:"img/141Kabutops.png", evolveFrom:"Kabuto", evolveTo:"None"},
+    {number:"142", name:"Aerodactyl", type: "Rock & Flying", img:"img/142Aerodactyl.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"143", name:"Snorlax", type: "Normal", img:"img/143Snorlax.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"144", name:"Articuno", type: "Ice & Flying", img:"img/144Articuno.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"145", name:"Zapdos", type: "Electric & Flying", img:"img/145Zapdos.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"146", name:"Moltres", type: "Fire & Flying", img:"img/146Moltres.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"147", name:"Dratini", type: "Dragon", img:"img/147Dratini.png", evolveFrom:"None", evolveTo:"Dragonair"},
+    {number:"148", name:"Dragonair", type: "Dragon", img:"img/148Dragonair.png", evolveFrom:"Dratini", evolveTo:"Dragonite"},
+    {number:"149", name:"Dragonite", type: "Dragon & Flying", img:"img/149Dragonite.png", evolveFrom:"Dragonair", evolveTo:"None"},
+    {number:"150", name:"Mewtwo", type: "Psychic", img:"img/150Mewtwo.png", evolveFrom:"None", evolveTo:"None"},
+    {number:"151", name:"Mew", type: "Psychic", img:"img/151Mew.png", evolveFrom:"None", evolveTo:"None"},
 ];
