@@ -115,6 +115,67 @@ textarea {
      height:auto;
    }
 
+   /*Pokemon Card Divs -  Global */
+   .pokeDiv {
+     height:400px;
+     width:600px;
+     border-radius:5px;
+   }
+
+   /* Pokemon Type Div Styles*/
+
+      /*Single Type*/
+
+   .normal{
+    background:rgba(170, 170, 155);
+   }
+   .fire {
+    background:rgba(236, 84, 53);
+   }
+   .water{
+    background:rgba(80, 153, 248);
+   }
+   .electric{
+    background:rgba(248, 205, 85);
+   }
+   .grass{
+    background:rgba(140, 201, 101);
+   }
+   .ice{
+    background:rgba(127, 203, 250);
+   }
+   .fighting{
+    background:rgba(175, 91, 74);
+   }
+   .poison{
+    background:rgba(159, 91, 150);
+   }
+   .ground{
+    background:rgba(216, 188, 102);
+   }
+   .flying{
+    background:rgba(138, 155, 248);
+   }
+   .psychic{
+    background:rgba(237, 99, 152);
+   }
+   .bug{
+    background:rgba(174, 186, 68);
+   }
+   .rock{
+    background:rgba(185, 170, 111);
+   }
+   .ghost{
+    background:rgba(102, 104, 182);
+   }
+   .dragon{
+    background:rgba(115, 106, 230);
+   }
+ 
+ 
+
+
+
 
 
 
