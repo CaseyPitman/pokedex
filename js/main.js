@@ -152,3 +152,69 @@ const pokemonArr = [
     {number:"150", name:"Mewtwo", type: "Psychic", divType:"psychic", img:"img/150Mewtwo.png", evolveFrom:"None", evolveTo:"None"},
     {number:"151", name:"Mew", type: "Psychic", divType:"psychic", img:"img/151Mew.png", evolveFrom:"None", evolveTo:"None"},
 ];
+
+    //figure out where these go re:scope - maybe an argument can help specify?
+//function to open modal?
+//function to close modal via X or close button? 
+//function to close modal via clicking off modal content
+
+//function to populate page 
+
+//CREATE THE CARDS
+    //create the input  
+        //give it the global pokediv class
+        //give it the type class (for background color)
+    //create the image
+        //give it global card class
+        //append to main div
+    //create number
+        //give it class
+        //append to main div
+    //create name
+        //give it class
+        //append to main div
+//Append div to main doc
+//add event listener to 
+//onclick call the function to open modal (pass argument to specify modal?)
+
+//CREATE THE MODAL
+    //create modal div
+        //give it global modal class
+    //create the modal content div
+        //give it the global modal content class
+        //give it pokemon type class(for color)
+        //create image
+            //give it global modal image class
+            //append image to modal content
+        //create number
+            //give it global modal number class
+            //append to number to modal content
+        //create name
+            //give it global modal name class
+            //append to modal content 
+        //create type   
+            //give it global modal type class
+            //append to modal content
+        //create evolve from & to (hopefully one inline go here)
+            //give it global modal evolve class
+            //append to modal content
+        //create close modal button - possibly experiment to put this at the top as an X if you can createElement a span?
+            //give it the close modal button class
+            //append to modal content
+            //add eventlistener (call close function - placement outside main function?)
+    //append modal content to modal div
+    //set display to "none" ? if necessary
+    //append modal to main doc
+
+
+//onload selector set to all load all call main function
+
+
+//at this point all the content is created...put the sort here?
+//set up function to sort based on type
+//the function will simply change the display on the cards to "none" or "block" as necessary,
+//based on the selector
+
+//OR build the sort into the main function with a default to All and then and change as we sort. 
+//Seems like this *might* create content on the fly, which could create sluggishness. May be better
+//to just load it all at the front and simply change the display settings. Think on this. 
