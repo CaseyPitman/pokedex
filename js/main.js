@@ -31,7 +31,7 @@ const pokemonArr = [
     {number:"029", name:"Nidoran (female)", type: "Poison", divType:"poison", img:"img/029Nidoran-female.png", evolveFrom:"None", evolveTo:"Nidorina"},
     {number:"030", name:"Nidorina", type: "Poison", divType:"poison", img:"img/030Nidorina.png", evolveFrom:"Nidoran (female)", evolveTo:"Nidoqueen"},
     {number:"031", name:"Nidoqueen", type: "Poison & Ground", divType:"poison", img:"img/031Nidoqueen.png", evolveFrom:"Nidorina", evolveTo:"None"},
-    {number:"032", name:"Nidoran (male)", type: "Poison", divType:"poison", img:"img/032Nidoran-male", evolveFrom:"None", evolveTo:"Nidorino"},
+    {number:"032", name:"Nidoran (male)", type: "Poison", divType:"poison", img:"img/032Nidoran-male.png", evolveFrom:"None", evolveTo:"Nidorino"},
     {number:"033", name:"Nidorino", type: "Poison", divType:"poison", img:"img/033Nidorino.png", evolveFrom:"Nidoran (male)", evolveTo:"Nidoking"},
     {number:"034", name:"Nidoking", type: "Poison & Ground", divType:"poison", img:"img/034Nidoking.png", evolveFrom:"Nidorino", evolveTo:"None"},
     {number:"035", name:"Clefairy", type: "Normal", divType:"normal", img:"img/035Clefairy.png", evolveFrom:"None", evolveTo:"Clefable"},
@@ -159,14 +159,15 @@ let loadPokedex=function(){
 
     //sub function to open modal
     //sub function to close modal
+let test = function(){
+    alert("Test");
+}
+
 
 //CREATE THE CARDS
     //create the input 
-    let pokeDiv=document.createElement("div");
-        //give it the global pokediv class
-        pokeDiv.setAttribute("class", "poke-div");
-        //give it the type class (for background color)
-       // pokeDiv.setAttribute ("class", pokemonArr[i].divType);
+    let pokeDiv=document.createElement("button");
+        pokeDiv.setAttribute ("class", pokemonArr[i].divType);
         //create the image
         let pokeCardImg=document.createElement("img");
             pokeCardImg.setAttribute("src", pokemonArr[i].img);
@@ -182,9 +183,10 @@ let loadPokedex=function(){
             pokemonName.setAttribute("class", "pokemon-name");
             pokemonName.innerText = pokemonArr[i].name;
             pokeDiv.appendChild(pokemonName);//append to main div
-    document.getElementById("content-wrapper").appendChild(pokeDiv);
-//Append div to main doc
-//add event listener to 
+    //Append div to main doc
+    document.getElementById("content-wrapper").appendChild(pokeDiv); 
+//add event listener to open the modal
+pokeDiv.addEventListener("click", test); //testing
 //event listener to call the modal 
 
 //CREATE THE MODAL
