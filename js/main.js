@@ -153,15 +153,19 @@ const pokemonArr = [
     {number:"151", name:"Mew", type: "Psychic", divType:"psychic", img:"img/151Mew.png", evolveFrom:"None", evolveTo:"None"},
 ];
 
-    //figure out where these go re:scope - maybe an argument can help specify?
-//function to open modal?
-//function to close modal via X or close button? 
-//function to close modal via clicking off modal content
+//MAIN FUNCTION
+let loadPokedex=function(){
+    for(let i=0;i<pokemonArr.length;i++)
 
-//function to populate page 
+
+
+    //sub function to open modal
+    //sub function to close modal
+
+
 
 //CREATE THE CARDS
-    //create the input  
+    //create the input 
         //give it the global pokediv class
         //give it the type class (for background color)
     //create the image
@@ -206,6 +210,9 @@ const pokemonArr = [
     //set display to "none" ? if necessary
     //append modal to main doc
 
+
+
+}//End loadPokedex function
 
 //onload selector set to all load all call main function
 
