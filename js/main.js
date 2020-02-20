@@ -155,12 +155,13 @@ const pokemonArr = [
 
 //MAIN FUNCTION
 let loadPokedex=function(){
+
     for(let i=0;i<pokemonArr.length;i++){
 
     //sub function to open modal
     //sub function to close modal
 let test = function(){
-    alert("Test");
+    alert(pokemonArr[i].name);
 }
 
 //Assigns background color to card based on type
@@ -198,7 +199,7 @@ switch(pokemonType){
         backgroundColor="rgba(138, 155, 248)";
         break;
     case "psychic":
-        backgroundColor="background:rgba(237, 99, 152)";
+        backgroundColor="rgba(237, 99, 152)";
         break;
     case "bug": 
         backgroundColor="rgba(174, 186, 68)";
@@ -242,6 +243,8 @@ switch(pokemonType){
 pokeDiv.addEventListener("click", test); //testing
 //event listener to call the modal 
 
+
+
 //CREATE THE MODAL
     //create modal div
         //give it global modal class
@@ -275,9 +278,10 @@ pokeDiv.addEventListener("click", test); //testing
 
 }//End loadPokedex function
 
-loadPokedex();
+//load all pokemon on page load
+window.onload=loadPokedex();
 
-//onload selector set to all load all call main function
+
 
 
 //at this point all the content is created...put the sort here?

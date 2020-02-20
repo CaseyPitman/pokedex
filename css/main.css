@@ -124,14 +124,15 @@ textarea {
 
    /*Pokemon Card Divs -  Global */
    .poke-div {
-     height:300px;
-     width:200px;
+     height:240px;
+     width:160px;
      border-radius:5px;
      border:1px solid black;
+     margin:20px;
    }
 
    .poke-card-img{
-     width:40%;
+     width:66%;
      height: auto;
      padding:5px;
      border:1px solid black;
@@ -140,7 +141,7 @@ textarea {
    }
 
    .poke-div:hover {
-     transform:scale(1.05);
+     transform:scale(1.15);
    }
    
 
