@@ -163,15 +163,68 @@ let test = function(){
     alert("Test");
 }
 
+//Assigns background color to card based on type
+let backgroundColor;
+let pokemonType = pokemonArr[i].divType;
+switch(pokemonType){
+    case "normal": 
+        backgroundColor="rgba(170, 170, 155)";
+        break;
+    case "fire":
+        backgroundColor="rgba(236, 84, 53)";
+        break;
+    case "water":
+        backgroundColor="rgba(80, 153, 248)";
+        break;
+    case "electric":
+        backgroundColor="rgba(248, 205, 85)";
+        break;
+    case "grass":
+        backgroundColor="rgba(140, 201, 101)";
+        break;
+    case "ice":
+        backgroundColor="rgba(127, 203, 250)";
+        break;
+    case "fighting":
+        backgroundColor="rgba(175, 91, 74)";
+        break;
+    case "poison":
+        backgroundColor="rgba(159, 91, 150)";
+        break;
+    case "ground": 
+        backgroundColor="rgba(216, 188, 102)";
+        break;
+    case "flying":
+        backgroundColor="rgba(138, 155, 248)";
+        break;
+    case "psychic":
+        backgroundColor="background:rgba(237, 99, 152)";
+        break;
+    case "bug": 
+        backgroundColor="rgba(174, 186, 68)";
+        break;
+    case "rock":
+        backgroundColor="rgba(185, 170, 111)";
+        break;
+    case "ghost":
+        backgroundColor="rgba(102, 104, 182)";
+        break;
+    case "dragon":
+        backgroundColor="rgba(115, 106, 230)";
+        break;
+    default: 
+        backgroundColor="lightgray";
+}
 
 //CREATE THE CARDS
     //create the input 
     let pokeDiv=document.createElement("button");
-        pokeDiv.setAttribute ("class", pokemonArr[i].divType);
+        pokeDiv.setAttribute ("class", "poke-div");
+        pokeDiv.style.background=backgroundColor;
         //create the image
         let pokeCardImg=document.createElement("img");
             pokeCardImg.setAttribute("src", pokemonArr[i].img);
-            pokeCardImg.setAttribute("class", "poke-card-img")
+            pokeCardImg.setAttribute("class", "poke-card-img");
             pokeDiv.appendChild(pokeCardImg);//append to poke div
         //create number
         let pokemonNum=document.createElement("h3");
