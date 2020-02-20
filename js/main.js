@@ -1,16 +1,16 @@
 //Array containing Pokemon info
 const pokemonArr = [
-    {number:"001", name: "Bulbasaur", type: "Grass & Poison", divType:"grass", image:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
-    {number:"002", name: "Ivysaur", type: "Grass & Poison", divType:"grass", image:"img/002Ivysaur.png", evolveFrom:"Bulbasaur", evolveTo:"Venusaur"},
-    {number:"003", name:"Venusaur", type:"Grass & Poison",divType:"grass", image:"img/003Venusaur.png", evolveFrom:"Ivysaur", evolveTo:"None"},
-    {number:"004", name:"Charmander", type:"Fire", divType:"fire", image:"img/004Charmander.png", evolveFrom:"None", evolveTo:"Charmeleon"},
-    {number:"005", name:"Charmeleon", type:"Fire", divType:"fire", image:"img/005Charmeleon.png", evolveFrom:"Charmander", evolveTo:"Charizard"},
-    {number:"006", name:"Charizard", type:"Fire & Flying", divType:"fire", image:"img/006Charizard.png", evolveFrom:"Charmeleon", evolveTo:"None"},
-    {number:"007", name:"Squirtle", type:"Water", divType:"water", image:"img/007Squirtle.png", evolveFrom:"None", evolveTo:"Wartortle"},
-    {number:"008", name:"Wartortle", type:"Water", divType:"water", image:"img/008Wartortle.png", evolveFrom:"Squirtle", evolveTo:"Blastoise"},
-    {number:"009", name:"Blastoise", type:"Water", divType:"water", image:"img/008Wartortle.png", evolveFrom:"Wartortle", evolveTo:"None"},
-    {number:"010", name:"Caterpie", type:"Bug", divType:"bug", image:"img/010Caterpie.png", evolveFrom:"None", evolveTo:"Metapod"},
-    {number:"011", name:"Metapod", type:"Bug", divType:"bug", image:"img/011Metapod.png", evolveFrom:"Caterpie", evolveTo:"Butterfree"},
+    {number:"001", name: "Bulbasaur", type: "Grass & Poison", divType:"grass", img:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
+    {number:"002", name: "Ivysaur", type: "Grass & Poison", divType:"grass", img:"img/002Ivysaur.png", evolveFrom:"Bulbasaur", evolveTo:"Venusaur"},
+    {number:"003", name:"Venusaur", type:"Grass & Poison",divType:"grass", img:"img/003Venusaur.png", evolveFrom:"Ivysaur", evolveTo:"None"},
+    {number:"004", name:"Charmander", type:"Fire", divType:"fire", img:"img/004Charmander.png", evolveFrom:"None", evolveTo:"Charmeleon"},
+    {number:"005", name:"Charmeleon", type:"Fire", divType:"fire", img:"img/005Charmeleon.png", evolveFrom:"Charmander", evolveTo:"Charizard"},
+    {number:"006", name:"Charizard", type:"Fire & Flying", divType:"fire", img:"img/006Charizard.png", evolveFrom:"Charmeleon", evolveTo:"None"},
+    {number:"007", name:"Squirtle", type:"Water", divType:"water", img:"img/007Squirtle.png", evolveFrom:"None", evolveTo:"Wartortle"},
+    {number:"008", name:"Wartortle", type:"Water", divType:"water", img:"img/008Wartortle.png", evolveFrom:"Squirtle", evolveTo:"Blastoise"},
+    {number:"009", name:"Blastoise", type:"Water", divType:"water", img:"img/008Wartortle.png", evolveFrom:"Wartortle", evolveTo:"None"},
+    {number:"010", name:"Caterpie", type:"Bug", divType:"bug", img:"img/010Caterpie.png", evolveFrom:"None", evolveTo:"Metapod"},
+    {number:"011", name:"Metapod", type:"Bug", divType:"bug", img:"img/011Metapod.png", evolveFrom:"Caterpie", evolveTo:"Butterfree"},
     {number:"012", name:"Butterfree", type:"Bug & Flying", divType:"bug", img:"img/012Butterfree.png", evolveFrom:"Metapod", evolveTo:"None"},
     {number:"013", name:"Weedle", type:"Bug & Poison", divType:"bug", img:"img/013Weedle.png", evolveFrom:"None", evolveTo:"Kakuna"},
     {number:"014", name:"Kakuna", type:"Bug & Poison", divType:"bug", img:"img/014Kakuna.png", evolveFrom:"Weedle", evolveTo:"Beedrill"},
@@ -155,31 +155,37 @@ const pokemonArr = [
 
 //MAIN FUNCTION
 let loadPokedex=function(){
-    for(let i=0;i<pokemonArr.length;i++)
-
-
+    for(let i=0;i<pokemonArr.length;i++){
 
     //sub function to open modal
     //sub function to close modal
 
-
-
 //CREATE THE CARDS
     //create the input 
+    let pokeDiv=document.createElement("div");
         //give it the global pokediv class
+        pokeDiv.setAttribute("class", "poke-div");
         //give it the type class (for background color)
-    //create the image
-        //give it global card class
-        //append to main div
-    //create number
-        //give it class
-        //append to main div
-    //create name
-        //give it class
-        //append to main div
+       // pokeDiv.setAttribute ("class", pokemonArr[i].divType);
+        //create the image
+        let pokeCardImg=document.createElement("img");
+            pokeCardImg.setAttribute("src", pokemonArr[i].img);
+            pokeCardImg.setAttribute("class", "poke-card-img")
+            pokeDiv.appendChild(pokeCardImg);//append to poke div
+        //create number
+        let pokemonNum=document.createElement("h3");
+            pokemonNum.setAttribute("class", "pokemon-num");
+            pokemonNum.innerText = pokemonArr[i].number;
+            pokeDiv.appendChild(pokemonNum);//append to main div
+        //create name
+        let pokemonName=document.createElement("h3");
+            pokemonName.setAttribute("class", "pokemon-name");
+            pokemonName.innerText = pokemonArr[i].name;
+            pokeDiv.appendChild(pokemonName);//append to main div
+    document.getElementById("content-wrapper").appendChild(pokeDiv);
 //Append div to main doc
 //add event listener to 
-//onclick call the function to open modal (pass argument to specify modal?)
+//event listener to call the modal 
 
 //CREATE THE MODAL
     //create modal div
@@ -210,9 +216,11 @@ let loadPokedex=function(){
     //set display to "none" ? if necessary
     //append modal to main doc
 
-
+    }//end for loop
 
 }//End loadPokedex function
+
+loadPokedex();
 
 //onload selector set to all load all call main function
 

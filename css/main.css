@@ -115,11 +115,27 @@ textarea {
      height:auto;
    }
 
+   #content-wrapper{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-flow:row wrap;
+   }
+
    /*Pokemon Card Divs -  Global */
-   .pokeDiv {
-     height:400px;
-     width:600px;
+   .poke-div {
+     height:300px;
+     width:200px;
      border-radius:5px;
+     border:1px solid black;
+   }
+
+   .poke-card-img{
+     width:40%;
+     height: auto;
+     padding:5px;
+     border:1px solid black;
+     border-radius:50%;
    }
 
    /* Pokemon Type Div Styles*/
