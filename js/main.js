@@ -154,7 +154,7 @@ const pokemonArr = [
 ];
 
 //MAIN FUNCTION
-let loadPokedex=function(){
+let loadPokedex=function(sortType){
 
     for(let i=0;i<pokemonArr.length;i++){
 
@@ -246,8 +246,6 @@ switch(pokemonType){
 pokeDiv.addEventListener("click", openModal); //testing
 //event listener to call the modal 
 
-
-
 //CREATE THE MODAL
     //create modal div
     let pokeModal = document.createElement("div");
@@ -311,14 +309,6 @@ pokeDiv.addEventListener("click", openModal); //testing
 //load all pokemon on page load
 window.onload=loadPokedex();
 
-
-
-
-//at this point all the content is created...put the sort here?
-//set up function to sort based on type
-//the function will simply change the display on the cards to "none" or "block" as necessary,
-//based on the selector
-
-//OR build the sort into the main function with a default to All and then and change as we sort. 
-//Seems like this *might* create content on the fly, which could create sluggishness. May be better
-//to just load it all at the front and simply change the display settings. Think on this. 
+//onchange to sort
+    //get value from selector
+    //pass to the function
