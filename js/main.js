@@ -159,10 +159,13 @@ let loadPokedex=function(){
     for(let i=0;i<pokemonArr.length;i++){
 
     //sub function to open modal
+    let openModal=function(){
+        pokeModal.style.display="block";
+    };
     //sub function to close modal
-let test = function(){
-    alert(pokemonArr[i].name);
-}
+    let closeModal=function(){
+        pokeModal.style.display="none";
+    }
 
 //Assigns background color to card based on type
 let backgroundColor;
@@ -240,43 +243,66 @@ switch(pokemonType){
     //Append div to main doc
     document.getElementById("content-wrapper").appendChild(pokeDiv); 
 //add event listener to open the modal
-pokeDiv.addEventListener("click", test); //testing
+pokeDiv.addEventListener("click", openModal); //testing
 //event listener to call the modal 
 
 
 
 //CREATE THE MODAL
     //create modal div
-        //give it global modal class
-    //create the modal content div
-        //give it the global modal content class
-        //give it pokemon type class(for color)
-        //create image
-            //give it global modal image class
-            //append image to modal content
-        //create number
-            //give it global modal number class
-            //append to number to modal content
-        //create name
-            //give it global modal name class
-            //append to modal content 
-        //create type   
-            //give it global modal type class
-            //append to modal content
-        //create evolve from & to (hopefully one inline go here)
-            //give it global modal evolve class
-            //append to modal content
-        //create close modal button - possibly experiment to put this at the top as an X if you can createElement a span?
-            //give it the close modal button class
-            //append to modal content
-            //add eventlistener (call close function - placement outside main function?)
-    //append modal content to modal div
+    let pokeModal = document.createElement("div");
+    pokeModal.setAttribute("class", "poke-modal");
+        
+        //create the modal content div
+        let pokeModalContent = document.createElement("div");
+        pokeModalContent.setAttribute("class", "poke-modal-content");
+        pokeModalContent.style.background=backgroundColor;
+        
+            //create modal image
+                let pokeModalImg = document.createElement("img");
+                pokeModalImg.setAttribute("src", pokemonArr[i].img);
+                pokeModalImg.setAttribute("class", "poke-modal-img");
+                pokeModalContent.appendChild(pokeModalImg);
+
+            //create number
+                let pokeModalNum = document.createElement("h3");
+                pokeModalNum.innerText = pokemonArr[i].number;
+                pokeModalNum.setAttribute("class", "poke-modal-number modal-text");
+                pokeModalContent.appendChild(pokeModalNum);
+          
+            //create name
+                let pokeModalName = document.createElement("h3");
+                pokeModalName.innerText = pokemonArr[i].name;
+                pokeModalName.setAttribute("class", "poke-modal-name modal-text");
+                pokeModalContent.appendChild(pokeModalName);
+
+            //create type   
+                let pokeModalType = document.createElement("h3");
+                pokeModalType.innerText = pokemonArr[i].type;
+                pokeModalType.setAttribute("class", "poke-modal-type modal-text");
+                pokeModalContent.appendChild(pokeModalType);
+                
+            //create evolve from & to (hopefully one inline go here)
+                let pokeModalEvolve = document.createElement("h3");
+                pokeModalEvolve.innerText = "Evolves from: " + pokemonArr[i].evolveFrom + " | " + "Evolves to: " + pokemonArr[i].evolveTo;
+                pokeModalEvolve.setAttribute("class", "poke-modal-evolve poke-modal-text");
+                pokeModalContent.appendChild(pokeModalEvolve);
+
+            //create close modal button
+                let modalCloseButton = document.createElement("button");
+                modalCloseButton.innerText = "Close";
+                modalCloseButton.setAttribute("class", "modal-close-button");
+                pokeModalContent.appendChild(modalCloseButton);
+                modalCloseButton.addEventListener("click", closeModal);
+            
+        //append modal content to modal div
+        pokeModal.appendChild(pokeModalContent);
     //set display to "none" ? if necessary
     //append modal to main doc
-
+    document.getElementById("content-wrapper").appendChild(pokeModal);
     }//end for loop
 
-}//End loadPokedex function
+};//End loadPokedex function
 
 //load all pokemon on page load
 window.onload=loadPokedex();
