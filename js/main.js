@@ -285,7 +285,7 @@ pokeDiv.addEventListener("click", openModal); //testing
             //create evolve from & to (hopefully one inline go here)
                 let pokeModalEvolve = document.createElement("h3");
                 pokeModalEvolve.innerText = "Evolves from: " + pokemonArr[i].evolveFrom + " | " + "Evolves to: " + pokemonArr[i].evolveTo;
-                pokeModalEvolve.setAttribute("class", "poke-modal-evolve poke-modal-text");
+                pokeModalEvolve.setAttribute("class", "poke-modal-evolve modal-text");
                 pokeModalContent.appendChild(pokeModalEvolve);
 
             //create close modal button
