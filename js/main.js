@@ -264,29 +264,35 @@ pokeDiv.addEventListener("click", openModal); //testing
                 pokeModalImg.setAttribute("class", "poke-modal-img");
                 pokeModalContent.appendChild(pokeModalImg);
 
-            //create number
+            //create modal number
                 let pokeModalNum = document.createElement("h3");
                 pokeModalNum.innerText = pokemonArr[i].number;
-                pokeModalNum.setAttribute("class", "poke-modal-number modal-text");
+                pokeModalNum.setAttribute("class", "modal-text");
                 pokeModalContent.appendChild(pokeModalNum);
           
-            //create name
+            //create modal name
                 let pokeModalName = document.createElement("h3");
-                pokeModalName.innerText = pokemonArr[i].name;
-                pokeModalName.setAttribute("class", "poke-modal-name modal-text");
+                pokeModalName.innerText = "Name: " + pokemonArr[i].name;
+                pokeModalName.setAttribute("class", "modal-text");
                 pokeModalContent.appendChild(pokeModalName);
 
-            //create type   
+            //create modal type   
                 let pokeModalType = document.createElement("h3");
-                pokeModalType.innerText = pokemonArr[i].type;
-                pokeModalType.setAttribute("class", "poke-modal-type modal-text");
+                pokeModalType.innerText = "Type: " + pokemonArr[i].type;
+                pokeModalType.setAttribute("class", "modal-text");
                 pokeModalContent.appendChild(pokeModalType);
                 
-            //create evolve from & to (hopefully one inline go here)
-                let pokeModalEvolve = document.createElement("h3");
-                pokeModalEvolve.innerText = "Evolves from: " + pokemonArr[i].evolveFrom + " | " + "Evolves to: " + pokemonArr[i].evolveTo;
-                pokeModalEvolve.setAttribute("class", "poke-modal-evolve modal-text");
-                pokeModalContent.appendChild(pokeModalEvolve);
+            //create modal evolve from
+                let pokeModalEvolveFrom = document.createElement("h3");
+                pokeModalEvolveFrom.innerText = "Evolves from: " + pokemonArr[i].evolveFrom;
+                pokeModalEvolveFrom.setAttribute("class", "modal-text");
+                pokeModalContent.appendChild(pokeModalEvolveFrom);
+
+            //create modal evolve to
+                let pokeModalEvolveTo = document.createElement("h3");
+                pokeModalEvolveTo.innerText="Evolves to: " + pokemonArr[i].evolveTo;
+                pokeModalEvolveTo.setAttribute("class", "modal-text");
+                pokeModalContent.appendChild(pokeModalEvolveTo);
 
             //create close modal button
                 let modalCloseButton = document.createElement("button");
@@ -297,11 +303,9 @@ pokeDiv.addEventListener("click", openModal); //testing
             
         //append modal content to modal div
         pokeModal.appendChild(pokeModalContent);
-    //set display to "none" ? if necessary
     //append modal to main doc
     document.getElementById("content-wrapper").appendChild(pokeModal);
     }//end for loop
-
 };//End loadPokedex function
 
 //load all pokemon on page load

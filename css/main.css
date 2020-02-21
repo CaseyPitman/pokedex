@@ -137,7 +137,6 @@ textarea {
      font-size:1.6rem;
      font-family:"Tomorrow", sans-serif;
      font-weight: 300;
-     
    }
 
    .poke-card-img{
@@ -158,7 +157,7 @@ textarea {
 
    .poke-modal{
      display:none;
-     background:rgba(0,0,0,0.75);
+     background:rgba(0,0,0,0.8);
      width:100%;
      height:100%;
      display:none;
@@ -176,27 +175,42 @@ textarea {
     width:400px;
     height:600px;
     margin:3% auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-flow:row wrap;
     padding:10px;
     border-radius:5px;
+    text-align:center;
    }
 
    .poke-modal-img {
      background:white;
-     width:50%;
+     width:75%;
      height:auto;
      border:1px solid black;
      border-radius:50%;
      padding:5px;
+     margin:5% auto;
    }
 
    .modal-text {
      width:100%;
+     font-family:"Tomorrow", sans-serif;
+     padding:0;
+     margin:5px auto;
      font-size:2rem;
      text-align:center;
+   }
+
+   .modal-close-button{
+     background:white;
+     font-family:"Tomorrow", sans-serif;
+     font-size:1.5rem;
+     font-weight:bold;
+     padding:5px 15px;
+     margin:10px auto;
+   }
+
+   .modal-close-button:hover{
+    transform:scale(1.15);
+    box-shadow: 5px 5px 5px 0.25px;
    }
    
 
