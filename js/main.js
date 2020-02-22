@@ -1,3 +1,4 @@
+
 //Array containing Pokemon info
 const pokemonArr = [
     {number:"001", name: "Bulbasaur", type: "Grass & Poison", divType:"grass", img:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
@@ -154,9 +155,13 @@ const pokemonArr = [
 ];
 
 //MAIN FUNCTION
-let loadPokedex=function(sortType){
+let loadPokedex=function(){
 
-    for(let i=0;i<pokemonArr.length;i++){
+//access the selector to sort by type
+    let sortType = document.getElementById("type-selector");
+    let selectedType = sortType.options[sortType.selectedIndex].value;
+    
+    for(let i=0;i<pokemonArr.length;i++){//iterates through pokemonArr to populate page
 
     //sub function to open modal
     let openModal=function(){
@@ -246,6 +251,7 @@ switch(pokemonType){
 pokeDiv.addEventListener("click", openModal); //testing
 //event listener to call the modal 
 
+
 //CREATE THE MODAL
     //create modal div
     let pokeModal = document.createElement("div");
@@ -309,6 +315,18 @@ pokeDiv.addEventListener("click", openModal); //testing
 //load all pokemon on page load
 window.onload=loadPokedex();
 
+
+
+
+/*
+const sortPokemon = function(){
+    var type = document.getElementById("type-selector");
+    var sortType = type.options[type.selectedIndex].value;
+    console.log(sortType);
+    loadPokedex(sortType);
+}*/
+
 //onchange to sort
-    //get value from selector
-    //pass to the function
+let sortButton = document.getElementById("sort-button");
+sortButton.addEventListener("click", loadPokedex);
+
