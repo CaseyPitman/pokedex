@@ -101,12 +101,14 @@ textarea {
    html{
      background:rgb(255,255,255);
      font-size:10px;
+     width:100%;
    }
 
    body{
      width:100%;
      max-width:1600px;
      text-align:center;
+     margin:auto;
    }
    #banner {
      display:flex;
@@ -125,6 +127,7 @@ textarea {
     font-size:9rem;
     margin:auto;
     padding:10px 0;
+    width:100%;
    }
 
 
@@ -376,16 +379,18 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 768px) {
+  #banner {
+    
+  }
+
+
+
+
+
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
+
 
 /* ==========================================================================
    Print styles.
