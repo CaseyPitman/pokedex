@@ -1,4 +1,8 @@
 
+$( document ).ready(function() {
+
+
+
 //Array containing Pokemon info
 const pokemonArr = [
     {number:"001", name: "Bulbasaur", type: "Grass & Poison", divType:"grass", img:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
@@ -9,7 +13,7 @@ const pokemonArr = [
     {number:"006", name:"Charizard", type:"Fire & Flying", divType:"fire", img:"img/006Charizard.png", evolveFrom:"Charmeleon", evolveTo:"None"},
     {number:"007", name:"Squirtle", type:"Water", divType:"water", img:"img/007Squirtle.png", evolveFrom:"None", evolveTo:"Wartortle"},
     {number:"008", name:"Wartortle", type:"Water", divType:"water", img:"img/008Wartortle.png", evolveFrom:"Squirtle", evolveTo:"Blastoise"},
-    {number:"009", name:"Blastoise", type:"Water", divType:"water", img:"img/008Wartortle.png", evolveFrom:"Wartortle", evolveTo:"None"},
+    {number:"009", name:"Blastoise", type:"Water", divType:"water", img:"img/009Blastoise.png", evolveFrom:"Wartortle", evolveTo:"None"},
     {number:"010", name:"Caterpie", type:"Bug", divType:"bug", img:"img/010Caterpie.png", evolveFrom:"None", evolveTo:"Metapod"},
     {number:"011", name:"Metapod", type:"Bug", divType:"bug", img:"img/011Metapod.png", evolveFrom:"Caterpie", evolveTo:"Butterfree"},
     {number:"012", name:"Butterfree", type:"Bug & Flying", divType:"bug", img:"img/012Butterfree.png", evolveFrom:"Metapod", evolveTo:"None"},
@@ -160,6 +164,11 @@ let loadPokedex=function(){
 //access the selector to sort by type
     let sortType = document.getElementById("type-selector");
     let selectedType = sortType.options[sortType.selectedIndex].value;
+    console.log(selectedType);
+
+    //find a way to wipe the div before populating...
+    document.getElementById("content-wrapper").innerHTML = "";
+
     
     for(let i=0;i<pokemonArr.length;i++){//iterates through pokemonArr to populate page
 
@@ -252,6 +261,18 @@ pokeDiv.addEventListener("click", openModal); //testing
 //event listener to call the modal 
 
 
+    //Sorting
+    if (selectedType =="All"){
+        pokeDiv.style.display="block";
+    }       
+    else if (pokemonArr[i].type.includes(selectedType)===true){
+        pokeDiv.style.display="block";
+    }
+    else {
+      pokeDiv.style.display="none";
+    }
+  
+
 //CREATE THE MODAL
     //create modal div
     let pokeModal = document.createElement("div");
@@ -304,9 +325,11 @@ pokeDiv.addEventListener("click", openModal); //testing
                 modalCloseButton.setAttribute("class", "modal-close-button");
                 pokeModalContent.appendChild(modalCloseButton);
                 modalCloseButton.addEventListener("click", closeModal);
-            
+                
+               
         //append modal content to modal div
         pokeModal.appendChild(pokeModalContent);
+        
     //append modal to main doc
     document.getElementById("content-wrapper").appendChild(pokeModal);
     }//end for loop
@@ -316,17 +339,12 @@ pokeDiv.addEventListener("click", openModal); //testing
 window.onload=loadPokedex();
 
 
+//Sorts by type
+let sortSelector = document.getElementById("type-selector");
+sortSelector.addEventListener("change", loadPokedex);
 
 
-/*
-const sortPokemon = function(){
-    var type = document.getElementById("type-selector");
-    var sortType = type.options[type.selectedIndex].value;
-    console.log(sortType);
-    loadPokedex(sortType);
-}*/
 
-//onchange to sort
-let sortButton = document.getElementById("sort-button");
-sortButton.addEventListener("click", loadPokedex);
 
+
+});
