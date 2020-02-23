@@ -257,9 +257,13 @@ switch(pokemonType){
     //Append div to main doc
     document.getElementById("content-wrapper").appendChild(pokeDiv); 
 //add event listener to open the modal
-pokeDiv.addEventListener("click", openModal); //testing
+pokeDiv.addEventListener("click", openModal); 
 //event listener to call the modal 
 
+    //Set white text for readability in certain colored divs
+    if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
+        pokeDiv.style.color = "white";
+    }
 
     //Sorting
     if (selectedType =="All"){
@@ -272,7 +276,6 @@ pokeDiv.addEventListener("click", openModal); //testing
       pokeDiv.style.display="none";
     }
   
-
 //CREATE THE MODAL
     //create modal div
     let pokeModal = document.createElement("div");
@@ -325,26 +328,25 @@ pokeDiv.addEventListener("click", openModal); //testing
                 modalCloseButton.setAttribute("class", "modal-close-button");
                 pokeModalContent.appendChild(modalCloseButton);
                 modalCloseButton.addEventListener("click", closeModal);
-                
-               
+                   
         //append modal content to modal div
         pokeModal.appendChild(pokeModalContent);
         
     //append modal to main doc
     document.getElementById("content-wrapper").appendChild(pokeModal);
+    
+    //White text for readability in certain modals
+    if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
+        pokeModalContent.style.color = "white";
+    }
+
     }//end for loop
 };//End loadPokedex function
 
 //load all pokemon on page load
 window.onload=loadPokedex();
 
-
 //Sorts by type
 let sortSelector = document.getElementById("type-selector");
 sortSelector.addEventListener("change", loadPokedex);
-
-
-
-
-
 });
