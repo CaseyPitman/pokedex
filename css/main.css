@@ -109,12 +109,17 @@ textarea {
      max-width:1600px;
      text-align:center;
      margin:auto;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     flex-flow: row wrap;
    }
    #banner {
      display:flex;
      justify-content: center;
      align-items: center;
      flex-flow:row wrap;
+     width:100%;
    }
    #starter-pokemon-img{
      width:250px;
@@ -130,7 +135,6 @@ textarea {
     width:100%;
    }
 
-
    #pokeball {
      width:100px;
      height:auto;
@@ -143,7 +147,6 @@ textarea {
      text-align:center;
      width: 100%;
      margin:0 auto 10px;
-     height:50px;
      border-top:2px solid black;
      border-bottom:2px solid black;
      padding:20px;
@@ -151,7 +154,7 @@ textarea {
    }
 
    #sort-label {
-    font-size:3.6rem;
+    font-size:3rem;
     font-weight:700;
     margin-right:10px;
    }
@@ -267,7 +270,7 @@ textarea {
      border-top:2px solid black;
      border-bottom:2px solid black;
      display:flex;
-     justify-content: space-between;
+     justify-content: center;
      align-items: center;
      flex-flow:row wrap;
      background:#ff3e32
@@ -275,12 +278,14 @@ textarea {
    #growlithe-img{
      width:250px;
   }
+
    #footer-content{
      text-align:center;
      font-family:"Tomorrow", sans-serif;
      font-size:2rem;
      color:white;
      font-weight:700;
+     margin:0 50px;
    }
    #squirtle-img{
      width:150px;
@@ -384,9 +389,52 @@ textarea {
     
   }
 
+  #headline {
+    font-size:5rem;
+  }
 
+  #pokeball {
+    width:75px;
+  }
 
+  #sorting{
 
+  }
+  #sort-label{
+    font-size:2.4rem;
+  }
+
+  .poke-div{
+    width:120px;
+    height:180px;
+    font-size:1.2rem;
+  }
+  .poke-card-img{
+    margin-top:5px;
+  }
+  .poke-modal-content {
+   width:300px;
+   height:450px;
+   margin:40% auto;
+  }
+
+  .modal-text{
+    font-size:1.6rem;
+  }
+
+  #squirtle-img{
+    width:75px;
+    padding:0;
+  }
+
+  #growlithe-img{
+    width:125px;
+  }
+
+  #footer-content{
+    margin:0 auto;
+    width:100%;
+  }
 
 }
 
