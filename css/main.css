@@ -275,6 +275,7 @@ textarea {
      flex-flow:row wrap;
      background:#ff3e32
    }
+
    #growlithe-img{
      width:250px;
   }
@@ -287,13 +288,11 @@ textarea {
      font-weight:700;
      margin:0 50px;
    }
+
    #squirtle-img{
      width:150px;
      padding-right:100px;
    }
-
-   
-
 
 /* ==========================================================================
    Helper classes
@@ -385,10 +384,6 @@ textarea {
    ========================================================================== */
 
 @media only screen and (max-width: 768px) {
-  #banner {
-    
-  }
-
   #headline {
     font-size:5rem;
   }
@@ -397,9 +392,6 @@ textarea {
     width:75px;
   }
 
-  #sorting{
-
-  }
   #sort-label{
     font-size:2.4rem;
   }
@@ -409,9 +401,11 @@ textarea {
     height:180px;
     font-size:1.2rem;
   }
+
   .poke-card-img{
     margin-top:5px;
   }
+
   .poke-modal-content {
    width:300px;
    height:450px;
@@ -437,8 +431,6 @@ textarea {
   }
 
 }
-
-
 
 /* ==========================================================================
    Print styles.

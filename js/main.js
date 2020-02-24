@@ -1,8 +1,6 @@
 
 $( document ).ready(function() {
 
-
-
 //Array containing Pokemon info
 const pokemonArr = [
     {number:"001", name: "Bulbasaur", type: "Grass & Poison", divType:"grass", img:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
@@ -158,19 +156,18 @@ const pokemonArr = [
     {number:"151", name:"Mew", type: "Psychic", divType:"psychic", img:"img/151Mew.png", evolveFrom:"None", evolveTo:"None"},
 ];
 
-//MAIN FUNCTION
+//MAIN FUNCTION - populates the page (defaults to ALL Pokemon on load)
 let loadPokedex=function(){
 
 //access the selector to sort by type
     let sortType = document.getElementById("type-selector");
     let selectedType = sortType.options[sortType.selectedIndex].value;
-    console.log(selectedType);
 
-    //find a way to wipe the div before populating...
+    //clears div before repopulating based on type selected
     document.getElementById("content-wrapper").innerHTML = "";
-
     
-    for(let i=0;i<pokemonArr.length;i++){//iterates through pokemonArr to populate page
+    //iterates through pokemonArr to populate page
+    for(let i=0;i<pokemonArr.length;i++){
 
     //sub function to open modal
     let openModal=function(){
@@ -258,14 +255,13 @@ switch(pokemonType){
     document.getElementById("content-wrapper").appendChild(pokeDiv); 
 //add event listener to open the modal
 pokeDiv.addEventListener("click", openModal); 
-//event listener to call the modal 
 
     //Set white text for readability in certain colored divs
     if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
         pokeDiv.style.color = "white";
     }
 
-    //Sorting
+//SORTING BY TYPE SELECTED
     if (selectedType =="All"){
         pokeDiv.style.display="block";
     }       
