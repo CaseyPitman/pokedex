@@ -257,7 +257,7 @@ switch(pokemonType){
 pokeDiv.addEventListener("click", openModal); 
 
     //Set white text for readability in certain colored divs
-    if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
+   if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
         pokeDiv.style.color = "white";
     }
 

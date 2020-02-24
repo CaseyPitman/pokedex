@@ -195,7 +195,7 @@ textarea {
 
    .poke-div:hover {
      transform:scale(1.15);
-     box-shadow: 10px 10px 5px 0.25px;     
+     box-shadow: 10px 10px 5px 0.25px black;     
      cursor: pointer;
    }
 
