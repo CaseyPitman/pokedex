@@ -1,7 +1,6 @@
 
 $( document ).ready(function() {
-
-//Array containing Pokemon info
+//An object containing a bunch of Pokemon info
 const pokemonArr = [
     {number:"001", name: "Bulbasaur", type: "Grass & Poison", divType:"grass", img:"img/001Bulbasaur.png", evolveFrom:"None", evolveTo:"Ivysaur"},
     {number:"002", name: "Ivysaur", type: "Grass & Poison", divType:"grass", img:"img/002Ivysaur.png", evolveFrom:"Bulbasaur", evolveTo:"Venusaur"},
@@ -168,96 +167,95 @@ let loadPokedex=function(){
     
     //iterates through pokemonArr to populate page
     for(let i=0;i<pokemonArr.length;i++){
+        //sub function to open modal
+        let openModal=function(){
+            pokeModal.style.display="block";
+        };
+        //sub function to close modal
+        let closeModal=function(){
+            pokeModal.style.display="none";
+        }
 
-    //sub function to open modal
-    let openModal=function(){
-        pokeModal.style.display="block";
-    };
-    //sub function to close modal
-    let closeModal=function(){
-        pokeModal.style.display="none";
+    //Assigns background color to card based on type
+    let backgroundColor;
+    let pokemonType = pokemonArr[i].divType;
+    switch(pokemonType){
+        case "normal": 
+            backgroundColor="rgba(170, 170, 155)";
+            break;
+        case "fire":
+            backgroundColor="rgba(236, 84, 53)";
+            break;
+        case "water":
+            backgroundColor="rgba(80, 153, 248)";
+            break;
+        case "electric":
+            backgroundColor="rgba(248, 205, 85)";
+            break;
+        case "grass":
+            backgroundColor="rgba(140, 201, 101)";
+            break;
+        case "ice":
+            backgroundColor="rgba(127, 203, 250)";
+            break;
+        case "fighting":
+            backgroundColor="rgba(175, 91, 74)";
+            break;
+        case "poison":
+            backgroundColor="rgba(159, 91, 150)";
+            break;
+        case "ground": 
+            backgroundColor="rgba(216, 188, 102)";
+            break;
+        case "flying":
+            backgroundColor="rgba(138, 155, 248)";
+            break;
+        case "psychic":
+            backgroundColor="rgba(237, 99, 152)";
+            break;
+        case "bug": 
+            backgroundColor="rgba(174, 186, 68)";
+            break;
+        case "rock":
+            backgroundColor="rgba(185, 170, 111)";
+            break;
+        case "ghost":
+            backgroundColor="rgba(102, 104, 182)";
+            break;
+        case "dragon":
+            backgroundColor="rgba(115, 106, 230)";
+            break;
+        default: 
+            backgroundColor="lightgray";
     }
-
-//Assigns background color to card based on type
-let backgroundColor;
-let pokemonType = pokemonArr[i].divType;
-switch(pokemonType){
-    case "normal": 
-        backgroundColor="rgba(170, 170, 155)";
-        break;
-    case "fire":
-        backgroundColor="rgba(236, 84, 53)";
-        break;
-    case "water":
-        backgroundColor="rgba(80, 153, 248)";
-        break;
-    case "electric":
-        backgroundColor="rgba(248, 205, 85)";
-        break;
-    case "grass":
-        backgroundColor="rgba(140, 201, 101)";
-        break;
-    case "ice":
-        backgroundColor="rgba(127, 203, 250)";
-        break;
-    case "fighting":
-        backgroundColor="rgba(175, 91, 74)";
-        break;
-    case "poison":
-        backgroundColor="rgba(159, 91, 150)";
-        break;
-    case "ground": 
-        backgroundColor="rgba(216, 188, 102)";
-        break;
-    case "flying":
-        backgroundColor="rgba(138, 155, 248)";
-        break;
-    case "psychic":
-        backgroundColor="rgba(237, 99, 152)";
-        break;
-    case "bug": 
-        backgroundColor="rgba(174, 186, 68)";
-        break;
-    case "rock":
-        backgroundColor="rgba(185, 170, 111)";
-        break;
-    case "ghost":
-        backgroundColor="rgba(102, 104, 182)";
-        break;
-    case "dragon":
-        backgroundColor="rgba(115, 106, 230)";
-        break;
-    default: 
-        backgroundColor="lightgray";
-}
 
 //CREATE THE CARDS
     //create the input 
     let pokeDiv=document.createElement("button");
         pokeDiv.setAttribute ("class", "poke-div");
         pokeDiv.style.background=backgroundColor;
-        //create the image
-        let pokeCardImg=document.createElement("img");
-            pokeCardImg.setAttribute("src", pokemonArr[i].img);
-            pokeCardImg.setAttribute("class", "poke-card-img");
-            pokeDiv.appendChild(pokeCardImg);//append to poke div
-        //create number
-        let pokemonNum=document.createElement("h3");
-            pokemonNum.setAttribute("class", "pokemon-num");
-            pokemonNum.innerText = pokemonArr[i].number;
-            pokeDiv.appendChild(pokemonNum);//append to main div
-        //create name
-        let pokemonName=document.createElement("h3");
-            pokemonName.setAttribute("class", "pokemon-name");
-            pokemonName.innerText = pokemonArr[i].name;
-            pokeDiv.appendChild(pokemonName);//append to main div
+    //create the image
+    let pokeCardImg=document.createElement("img");
+        pokeCardImg.setAttribute("src", pokemonArr[i].img);
+        pokeCardImg.setAttribute("class", "poke-card-img");
+        pokeDiv.appendChild(pokeCardImg);//append to poke div
+    //create number
+    let pokemonNum=document.createElement("h3");
+        pokemonNum.setAttribute("class", "pokemon-num");
+        pokemonNum.innerText = pokemonArr[i].number;
+        pokeDiv.appendChild(pokemonNum);//append to main div
+    //create name
+    let pokemonName=document.createElement("h3");
+        pokemonName.setAttribute("class", "pokemon-name");
+        pokemonName.innerText = pokemonArr[i].name;
+        pokeDiv.appendChild(pokemonName);//append to main div
     //Append div to main doc
     document.getElementById("content-wrapper").appendChild(pokeDiv); 
-//add event listener to open the modal
-pokeDiv.addEventListener("click", openModal); 
+    //add event listener to open the modal
+    pokeDiv.addEventListener("click", openModal); 
 
     //Set white text for readability in certain colored divs
-   if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
+    if (pokemonArr[i].divType == "poison" || pokemonArr[i].divType == "ghost" || pokemonArr[i].divType == "fighting"){
         pokeDiv.style.color = "white";
     }
 
@@ -277,56 +275,56 @@ pokeDiv.addEventListener("click", openModal);
     let pokeModal = document.createElement("div");
     pokeModal.setAttribute("class", "poke-modal");
         
-        //create the modal content div
-        let pokeModalContent = document.createElement("div");
-        pokeModalContent.setAttribute("class", "poke-modal-content");
-        pokeModalContent.style.background=backgroundColor;
+    //create the modal content div
+    let pokeModalContent = document.createElement("div");
+    pokeModalContent.setAttribute("class", "poke-modal-content");
+    pokeModalContent.style.background=backgroundColor;
         
-            //create modal image
-                let pokeModalImg = document.createElement("img");
-                pokeModalImg.setAttribute("src", pokemonArr[i].img);
-                pokeModalImg.setAttribute("class", "poke-modal-img");
-                pokeModalContent.appendChild(pokeModalImg);
+    //create modal image
+    let pokeModalImg = document.createElement("img");
+    pokeModalImg.setAttribute("src", pokemonArr[i].img);
+    pokeModalImg.setAttribute("class", "poke-modal-img");
+    pokeModalContent.appendChild(pokeModalImg);
 
-            //create modal number
-                let pokeModalNum = document.createElement("h3");
-                pokeModalNum.innerText = pokemonArr[i].number;
-                pokeModalNum.setAttribute("class", "modal-text");
-                pokeModalContent.appendChild(pokeModalNum);
+    //create modal number
+    let pokeModalNum = document.createElement("h3");
+    pokeModalNum.innerText = pokemonArr[i].number;
+    pokeModalNum.setAttribute("class", "modal-text");
+    pokeModalContent.appendChild(pokeModalNum);
           
-            //create modal name
-                let pokeModalName = document.createElement("h3");
-                pokeModalName.innerText = "Name: " + pokemonArr[i].name;
-                pokeModalName.setAttribute("class", "modal-text");
-                pokeModalContent.appendChild(pokeModalName);
+    //create modal name
+    let pokeModalName = document.createElement("h3");
+    pokeModalName.innerText = "Name: " + pokemonArr[i].name;
+    pokeModalName.setAttribute("class", "modal-text");
+    pokeModalContent.appendChild(pokeModalName);
 
-            //create modal type   
-                let pokeModalType = document.createElement("h3");
-                pokeModalType.innerText = "Type: " + pokemonArr[i].type;
-                pokeModalType.setAttribute("class", "modal-text");
-                pokeModalContent.appendChild(pokeModalType);
+    //create modal type   
+    let pokeModalType = document.createElement("h3");
+    pokeModalType.innerText = "Type: " + pokemonArr[i].type;
+    pokeModalType.setAttribute("class", "modal-text");
+    pokeModalContent.appendChild(pokeModalType);
                 
-            //create modal evolve from
-                let pokeModalEvolveFrom = document.createElement("h3");
-                pokeModalEvolveFrom.innerText = "Evolves from: " + pokemonArr[i].evolveFrom;
-                pokeModalEvolveFrom.setAttribute("class", "modal-text");
-                pokeModalContent.appendChild(pokeModalEvolveFrom);
+    //create modal evolve from
+    let pokeModalEvolveFrom = document.createElement("h3");
+    pokeModalEvolveFrom.innerText = "Evolves from: " + pokemonArr[i].evolveFrom;
+    pokeModalEvolveFrom.setAttribute("class", "modal-text");
+    pokeModalContent.appendChild(pokeModalEvolveFrom);
 
-            //create modal evolve to
-                let pokeModalEvolveTo = document.createElement("h3");
-                pokeModalEvolveTo.innerText="Evolves to: " + pokemonArr[i].evolveTo;
-                pokeModalEvolveTo.setAttribute("class", "modal-text");
-                pokeModalContent.appendChild(pokeModalEvolveTo);
+    //create modal evolve to
+    let pokeModalEvolveTo = document.createElement("h3");
+    pokeModalEvolveTo.innerText="Evolves to: " + pokemonArr[i].evolveTo;
+    pokeModalEvolveTo.setAttribute("class", "modal-text");
+    pokeModalContent.appendChild(pokeModalEvolveTo);
 
-            //create close modal button
-                let modalCloseButton = document.createElement("button");
-                modalCloseButton.innerText = "Close";
-                modalCloseButton.setAttribute("class", "modal-close-button");
-                pokeModalContent.appendChild(modalCloseButton);
-                modalCloseButton.addEventListener("click", closeModal);
+    //create close modal button
+    let modalCloseButton = document.createElement("button");
+    modalCloseButton.innerText = "Close";
+    modalCloseButton.setAttribute("class", "modal-close-button");
+    pokeModalContent.appendChild(modalCloseButton);
+    modalCloseButton.addEventListener("click", closeModal);
                    
-        //append modal content to modal div
-        pokeModal.appendChild(pokeModalContent);
+    //append modal content to modal div
+    pokeModal.appendChild(pokeModalContent);
         
     //append modal to main doc
     document.getElementById("content-wrapper").appendChild(pokeModal);
